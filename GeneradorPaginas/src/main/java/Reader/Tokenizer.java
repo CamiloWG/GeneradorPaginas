@@ -34,7 +34,7 @@ public class Tokenizer {
             
             if(elementParts[0].equals("")) System.arraycopy(elementParts, 1, elementParts, 0, elementParts.length-1);
             
-            if(this.checkIsValidElement(elementParts[0])) {
+            if(this.checkIsValidElement(elementParts[0].trim())) {
                 Map<String, String> clases = new HashMap<>();
                 String[] props = new String[elementParts.length - 1];
                 System.arraycopy(elementParts, 1, props, 0, props.length);
