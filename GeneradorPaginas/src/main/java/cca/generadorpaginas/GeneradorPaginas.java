@@ -4,13 +4,40 @@
 
 package cca.generadorpaginas;
 
+import Reader.Tokenizer;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import javax.swing.JFileChooser;
+
 /**
  *
- * @author smadero
+ * @author Camilo & Paula
  */
 public class GeneradorPaginas {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) throws Exception {
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            StringBuilder content = new StringBuilder();
+            try (BufferedReader reader = new BufferedReader(new FileReader(selectedFile))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    content.append(line).append("\n");
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            Tokenizer tokens = new Tokenizer(content.toString().toLowerCase());
+            tokens.makeElements();
+            
+            
+        } else {
+            System.out.println("No se seleccionó ningún archivo.");
+        }
+        
     }
 }
