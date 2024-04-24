@@ -27,4 +27,12 @@ public class Grammar {
    public void addRule(String key, String[] rules) {
        this.rules.put(key, Arrays.asList(rules));
    }
+   
+   public List<String> getRule(String key) {
+       return this.rules.get(key);
+   }
+   
+   public boolean hasRule(String var, String rule) {
+       return rules.get(var).contains(rule);       
+   }
 }

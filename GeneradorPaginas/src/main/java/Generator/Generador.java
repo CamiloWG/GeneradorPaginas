@@ -19,6 +19,7 @@ public class Generador {
     public Generador(Map<String, Map<String, String>> terminales) {
         this.terminales = terminales;
         this.gramatica = new Grammar();
+        this.inicializarGramatica();
     }
     
     
@@ -42,18 +43,36 @@ public class Generador {
     }
     
     
-    private void generateBase() {
+    public String generatePage() {
         String T = terminales.get("pagina") != null ? terminales.remove("pagina").get("contenido") : "Sin Titulo";
         String Q = "<head><title>"+ T +"</title></head><body>"+ generateComponents() +"</body>";
         String H = "<html>"+ Q +"</html>";
         String P = "<!DOCTYPE html>" + H;
+        return P;
     }
     
     private String generateComponents() {
         String  htmlElements = "";
         
         
+        for(Map.Entry entry : terminales.entrySet()) {
+            String currLabel = entry.getKey().toString().toUpperCase();
+            if(this.gramatica.hasRule("CONTENT", currLabel)) {
+                htmlElements += generateElement(currLabel, (Map<String, String>)entry.getValue());
+            }
+        }
         
         return htmlElements;
+    }
+    
+    private String generateElement(String element, Map<String, String> object) {
+        String rule = this.gramatica.getRule(element).get(0);
+        String contenido = object.get("contenido") != null ? object.remove("contenido") : "";
+        String clases = "";
+        for(String vals : object.values()) clases += vals + " "; 
+        
+        rule = rule.replace("TEXTOCONT", contenido);
+        rule = rule.replace("CLASS", clases);
+        return rule;
     }
 }

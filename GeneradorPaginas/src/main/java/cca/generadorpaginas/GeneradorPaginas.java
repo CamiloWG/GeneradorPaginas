@@ -4,6 +4,7 @@
 
 package cca.generadorpaginas;
 
+import Generator.Generador;
 import Reader.Tokenizer;
 import java.io.BufferedReader;
 import java.io.File;
@@ -33,7 +34,8 @@ public class GeneradorPaginas {
             }
             Tokenizer tokens = new Tokenizer(content.toString().toLowerCase());
             tokens.makeElements();
-            
+            Generador gen = new Generador(tokens.elementos);
+            System.out.println(gen.generatePage());
             
         } else {
             System.out.println("No se seleccionó ningún archivo.");
