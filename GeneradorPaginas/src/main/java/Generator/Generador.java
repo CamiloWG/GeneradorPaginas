@@ -71,6 +71,8 @@ public class Generador {
         String clases = "";
         for(String vals : object.values()) clases += vals + " "; 
         
+        String url = object.get("url") != null ? object.remove("url") : "";
+        rule = rule.replace("TEXTOLINK", url);
         rule = rule.replace("TEXTOCONT", contenido);
         rule = rule.replace("CLASS", clases);
         return rule;

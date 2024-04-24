@@ -7,8 +7,12 @@ package cca.generadorpaginas;
 import Generator.Generador;
 import Reader.Tokenizer;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import javax.swing.JFileChooser;
 
 /**
@@ -35,8 +39,11 @@ public class GeneradorPaginas {
             Tokenizer tokens = new Tokenizer(content.toString().toLowerCase());
             tokens.makeElements();
             Generador gen = new Generador(tokens.elementos);
-            System.out.println(gen.generatePage());
-            
+            Path ruta = Paths.get(fileChooser.getSelectedFile().getPath()).resolveSibling("index.html");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(ruta.toString()));
+            writer.write(gen.generatePage());
+            writer.close();
+            System.out.println("PÁGINA GENERADA CORRECTAMENTE!");
         } else {
             System.out.println("No se seleccionó ningún archivo.");
         }

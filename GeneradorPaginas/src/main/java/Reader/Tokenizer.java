@@ -51,7 +51,6 @@ public class Tokenizer {
             } else throw new Exception("ERROR: No se reconoce el elemento "+ elementParts[0]);
         }
         
-        System.out.println(this.elementos);
     }
     
     private boolean checkIsValidElement(String tag) {
