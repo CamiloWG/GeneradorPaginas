@@ -5,6 +5,8 @@
 package Generator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,4 +17,14 @@ import java.util.Map;
  */
 public class Grammar {
     
+    private Map<String, List<String>> rules;
+    
+   public Grammar() {
+       this.rules = new HashMap<>(); 
+   }
+   
+   
+   public void addRule(String key, String[] rules) {
+       this.rules.put(key, Arrays.asList(rules));
+   }
 }
