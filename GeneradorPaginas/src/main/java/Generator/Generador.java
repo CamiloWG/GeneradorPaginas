@@ -4,6 +4,7 @@
  */
 package Generator;
 
+import Resources.PreSets;
 import java.util.Map;
 
 /**
@@ -24,7 +25,7 @@ public class Generador {
    
     public String generatePage() {
         String T = terminales.get("pagina") != null ? terminales.remove("pagina").get("contenido") : "Sin Titulo";
-        String Q = "<head><title>"+ T +"</title></head><body>"+ generateComponents() +"</body>";
+        String Q = "<head><title>"+ T +"</title><style type=\"text/css\">"+ PreSets.CSS_PREDEFINED +"</style></head><body>"+ generateComponents() +"</body>";
         String H = "<html>"+ Q +"</html>";
         String P = "<!DOCTYPE html>" + H;
         return P;
@@ -32,16 +33,12 @@ public class Generador {
     
     private String generateComponents() {
         String  htmlElements = "";
-        
-        
         for(Map.Entry entry : terminales.entrySet()) {
             String currLabel = entry.getKey().toString().toUpperCase();
-            System.out.println(currLabel);
-            if(this.gramatica.hasRule("CONTENT", currLabel)) {
+           if(this.gramatica.hasRule("CONTENT", currLabel)) {
                 htmlElements += generateElement(currLabel, (Map<String, String>)entry.getValue());
             }
         }
-        
         return htmlElements;
     }
     

@@ -32,9 +32,9 @@ public class GeneradorPaginas {
         String content = readFile("Seleccione su archivo de texto de entrada:");
         
         if(content.length() > 0 && grammarFile.length() > 0) {
-            Tokenizer tokens = new Tokenizer(content);
-            tokens.makeElements();
             Grammar gram = new Grammar(grammarFile);
+            Tokenizer tokens = new Tokenizer(content);
+            tokens.makeElements(); 
             Generador gen = new Generador(tokens.elementos, gram);
             Path ruta = Paths.get(fileChooser.getSelectedFile().getPath()).resolveSibling("index.html");
             BufferedWriter writer = new BufferedWriter(new FileWriter(ruta.toString()));

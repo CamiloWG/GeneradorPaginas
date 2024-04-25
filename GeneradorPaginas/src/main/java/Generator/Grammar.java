@@ -41,7 +41,6 @@ public class Grammar {
                 this.addRule(key, values);
             }
         }
-        System.out.println(this.rules.toString());
     }
 
 
@@ -54,6 +53,6 @@ public class Grammar {
     }
 
     public boolean hasRule(String var, String rule) {
-        return rules.get(var).contains(rule);       
+        return rules.get(var).contains(rule);
     }
 }
