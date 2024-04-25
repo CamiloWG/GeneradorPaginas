@@ -25,7 +25,7 @@ public class Generador {
    
     public String generatePage() {
         String T = terminales.get("pagina") != null ? terminales.remove("pagina").get("contenido") : "Sin Titulo";
-        String Q = "<head><title>"+ T +"</title><style type=\"text/css\">"+ PreSets.CSS_PREDEFINED +"</style></head><body>"+ generateComponents() +"</body>";
+        String Q = "<head><title>"+ T +"</title><style type=\"text/css\">"+ PreSets.CSS_PREDEFINED +"</style></head><body><div class=\"content-container\">"+ generateComponents() +"</div></body>";
         String H = "<html>"+ Q +"</html>";
         String P = "<!DOCTYPE html>" + H;
         return P;
