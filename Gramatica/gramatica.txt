@@ -1,0 +1,14 @@
+CONTENT -> TITULO | TEXTO | IMAGEN | LINK | LISTA | VIDEO | TABLA | 
+TITULO -> <h1 class="CLASS"> TEXTOCONT </h1>
+TEXTO -> <p class="CLASS"> TEXTOCONT </p>
+IMAGEN -> <img src="TEXTOCONT" alt="Imagen" class="CLASS">
+LINK -> <a href="TEXTOLINK"  class="CLASS"> TEXTOCONT </a>
+LISTA -> <ul class="CLASS"> LISTITEM </ul>
+LISTITEM -> <li class="CLASS"> CONTENT </li> | <li class="CLASS"> CONTENT </li> LISTITEM
+VIDEO -> <iframe src="TEXTOCONT"  frameborder="0" allowfullscreen class="CLASS"></iframe>
+TABLA -> <table class="CLASS"> TABLECONT </table>
+TABLECONT -> ROW | ROW TABLECONT
+ROW -> <tr> CELL </tr>
+CELL -> <td> CONTENT </td> | <td class="CLASS"> CONTENT </td> CELL
+CLASS -> CLASE | CLASE CLASS | 
+CLASE -> grande | mediano | pequeno | azul | verde | rojo | centrado | izquierda | derecha | justificado | timesnewroman | arial | verdana | borderojo | bordeazul | bordeverde 

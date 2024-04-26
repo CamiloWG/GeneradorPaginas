@@ -5,7 +5,10 @@
 package Generator;
 
 import Resources.PreSets;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,7 +37,11 @@ public class Generador {
     
     private String generateComponents() {
         String  htmlElements = "";
-        for(Map.Entry entry : terminales.entrySet()) {
+        List<Map.Entry<String, ?>> entryList = new ArrayList<>(terminales.entrySet());
+
+        Collections.shuffle(entryList);
+
+        for (Map.Entry<String, ?> entry : entryList) {
             String currLabel = entry.getKey().toString().toUpperCase();
             if(this.gramatica.hasRule("CONTENT", currLabel)) {
                 htmlElements += generateElement(currLabel, (Map<String, String>)entry.getValue());

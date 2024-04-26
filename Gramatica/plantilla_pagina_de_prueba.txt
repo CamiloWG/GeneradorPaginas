@@ -1,0 +1,45 @@
+pagina
+contenido Pagina Uno
+-
+titulo
+contenido titulo de prueba
+tamaño grande
+color negro
+alineacion izquierda
+fuente arial
+-
+texto
+contenido texto de prueba
+tamaño mediano
+color rojo
+alineacion derecha
+fuente arial
+-
+imagen
+contenido https://www.clarin.com/2024/01/02/i3VP9yfpI_2000x1500__1.jpg
+tamaño grande
+alineacion derecha
+borde borderojo
+-
+link
+contenido Esto es un link
+url https://youtube.com/
+tamaño grande
+color azul
+-
+lista
+contenido Elemento 1, Elemento 2, {lista | contenido Sub Elemento 1, Sub Elemento 2, Sub Elemento 3 | color azul | borde bordeverde}, {imagen | contenido https://s1.elespanol.com/2016/09/10/motor/motor_154498567_16018712_1706x960.jpg | tamaño pequeno | borde borderojo}
+alineacion centro
+fuente verdana
+color verde
+borde bordeazul
+-
+video
+contenido https://www.youtube.com/embed/hSr4duVwQMQ
+alineacion centro 
+tamaño mediano
+-
+tabla
+contenido {titulo | contenido Titulo 1 | color rojo}, {titulo | contenido Titulo 2 | color verde}, {titulo | contenido Titulo 3 | color azul} | {link | contenido link | url https://youtube.com/}, {imagen | contenido https://s1.elespanol.com/2016/09/10/motor/motor_154498567_16018712_1706x960.jpg | tamaño pequeno | borde borderojo}, {texto | contenido Esto es un texto dentro de una tabla | fuente arial} | Fila 3, Fila 3, Fila 3
+fuente verdana
+borde bordeazul
