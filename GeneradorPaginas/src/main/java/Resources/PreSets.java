@@ -49,7 +49,7 @@ public class PreSets {
 "  font-size: x-large;\n" +
 "}\n" +
 "\n" +
-".pequeño {\n" +
+".pequeno {\n" +
 "  width: 100px;\n" +
 "  height: fit-content;\n" +
 "  font-size: larger;\n" +
@@ -99,16 +99,34 @@ public class PreSets {
 "  font-family: Verdana, Geneva, Tahoma, sans-serif;\n" +
 "}\n" +
 "\n" +
-".borde-rojo {\n" +
+".borderojo {\n" +
 "  border: 4px solid red;\n" +
 "}\n" +
 "\n" +
-".borde-azul {\n" +
+".bordeazul {\n" +
 "  border: 4px solid skyblue;\n" +
 "}\n" +
 "\n" +
-".borde-verde {\n" +
+".bordeverde {\n" +
 "  border: 4px solid greenyellow;\n" +
+"}\n" +          
+"table {\n" +
+"  border-collapse: collapse;\n" +
+"  width:  fit-content;\n" +
+"  padding: 5px;\n" +
+"  margin: 20px auto;\n" +
+"  border: 2px solid #ddd;\n" +
+"  font-family: Verdana, Geneva, Tahoma, sans-serif;\n" +
 "}\n" +
-"";
+"\n" +
+"td {\n" +
+"  width: 200px;\n" +
+"  height: 80px;\n" +
+"  margin: 0;\n" +
+"  display: inline-block;\n" +
+"  border: 2px solid #ddd;\n" +
+"  padding: 8px;\n" +
+"  text-align: center;\n" +
+"  align-items: center;\n" +
+"}";
 }
