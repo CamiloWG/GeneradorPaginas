@@ -25,7 +25,7 @@ public class PreSets {
 ".content-container {\n" +
 "  background-color: whitesmoke;\n" +
 "  height: 100%;\n" +
-"  width: 700px;\n" +
+"  width: 900px;\n" +
 "  padding: 20px; \n" +
 "  text-align: center;\n" +
 "  border-radius: 10px;\n" +
@@ -67,13 +67,13 @@ public class PreSets {
 "  color: greenyellow;\n" +
 "}\n" +
 "\n" +
-".izquierda {\n" +
+".derecha {\n" +
 "  text-align: left;\n" +
 "  margin-left: auto;\n" +
 "  margin-right: 0;\n" +
 "}\n" +
 "\n" +
-".derecha {\n" +
+".izquierda {\n" +
 "  text-align: right;\n" +
 "  margin-left: 0;\n" +
 "  margin-right: auto;\n" +
